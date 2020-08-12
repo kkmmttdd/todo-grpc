@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package todo_pdb;
+option go_package = "todo-grpc";
+
+message Todo {
+  string text = 1;
+}
+
+message TodoListRequest {
+}
+
+message TodoListResponse {
+  repeated Todo todos = 1;
+}
+
+service TodoService {
+  rpc TodoList (TodoListRequest) returns (TodoListResponse);
+}
