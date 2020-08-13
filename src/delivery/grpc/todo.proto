@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package todo_pdb;
-option go_package = "todo-grpc";
+option go_package = "todo_grpc";
 
 message Todo {
   string text = 1;
