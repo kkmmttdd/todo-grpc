@@ -15,5 +15,6 @@ func init() {
 
 type Repository interface {
 	Search() *[]*domain.Todo
+	Create(*domain.Todo) (bool, error)
 }
 

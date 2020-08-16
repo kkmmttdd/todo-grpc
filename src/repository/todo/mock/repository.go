@@ -12,3 +12,6 @@ func (r Repository) Search() *[]*domain.Todo {
 	}
 }
 
+func (r Repository) Create(t *domain.Todo) (bool, error) {
+	return true, nil
+}

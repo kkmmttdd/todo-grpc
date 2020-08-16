@@ -161,6 +161,108 @@ func (x *TodoListResponse) GetTodos() []*Todo {
 	return nil
 }
 
+type TodoCreateRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Todo *Todo `protobuf:"bytes,1,opt,name=todo,proto3" json:"todo,omitempty"`
+}
+
+func (x *TodoCreateRequest) Reset() {
+	*x = TodoCreateRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_src_delivery_grpc_todo_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TodoCreateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TodoCreateRequest) ProtoMessage() {}
+
+func (x *TodoCreateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_src_delivery_grpc_todo_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TodoCreateRequest.ProtoReflect.Descriptor instead.
+func (*TodoCreateRequest) Descriptor() ([]byte, []int) {
+	return file_src_delivery_grpc_todo_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *TodoCreateRequest) GetTodo() *Todo {
+	if x != nil {
+		return x.Todo
+	}
+	return nil
+}
+
+type TodoCreateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Valid   bool   `protobuf:"varint,1,opt,name=valid,proto3" json:"valid,omitempty"`
+	Message string `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *TodoCreateResponse) Reset() {
+	*x = TodoCreateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_src_delivery_grpc_todo_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TodoCreateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TodoCreateResponse) ProtoMessage() {}
+
+func (x *TodoCreateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_src_delivery_grpc_todo_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TodoCreateResponse.ProtoReflect.Descriptor instead.
+func (*TodoCreateResponse) Descriptor() ([]byte, []int) {
+	return file_src_delivery_grpc_todo_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *TodoCreateResponse) GetValid() bool {
+	if x != nil {
+		return x.Valid
+	}
+	return false
+}
+
+func (x *TodoCreateResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_src_delivery_grpc_todo_proto protoreflect.FileDescriptor
 
 var file_src_delivery_grpc_todo_proto_rawDesc = []byte{
@@ -172,13 +274,24 @@ var file_src_delivery_grpc_todo_proto_rawDesc = []byte{
 	0x65, 0x73, 0x74, 0x22, 0x34, 0x0a, 0x10, 0x54, 0x6f, 0x64, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x52,
 	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x20, 0x0a, 0x05, 0x74, 0x6f, 0x64, 0x6f, 0x73,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x6f,
-	0x64, 0x6f, 0x52, 0x05, 0x74, 0x6f, 0x64, 0x6f, 0x73, 0x32, 0x48, 0x0a, 0x0b, 0x54, 0x6f, 0x64,
-	0x6f, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x39, 0x0a, 0x08, 0x54, 0x6f, 0x64, 0x6f,
-	0x4c, 0x69, 0x73, 0x74, 0x12, 0x15, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x6f, 0x64, 0x6f,
-	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x72,
-	0x70, 0x63, 0x2e, 0x54, 0x6f, 0x64, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x42, 0x06, 0x5a, 0x04, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x64, 0x6f, 0x52, 0x05, 0x74, 0x6f, 0x64, 0x6f, 0x73, 0x22, 0x33, 0x0a, 0x11, 0x54, 0x6f, 0x64,
+	0x6f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1e,
+	0x0a, 0x04, 0x74, 0x6f, 0x64, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x67,
+	0x72, 0x70, 0x63, 0x2e, 0x54, 0x6f, 0x64, 0x6f, 0x52, 0x04, 0x74, 0x6f, 0x64, 0x6f, 0x22, 0x44,
+	0x0a, 0x12, 0x54, 0x6f, 0x64, 0x6f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x08, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x32, 0x89, 0x01, 0x0a, 0x0b, 0x54, 0x6f, 0x64, 0x6f, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x12, 0x39, 0x0a, 0x08, 0x54, 0x6f, 0x64, 0x6f, 0x4c, 0x69, 0x73, 0x74,
+	0x12, 0x15, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x6f, 0x64, 0x6f, 0x4c, 0x69, 0x73, 0x74,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x54,
+	0x6f, 0x64, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x3f, 0x0a, 0x0a, 0x54, 0x6f, 0x64, 0x6f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x17, 0x2e,
+	0x67, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x6f, 0x64, 0x6f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x54, 0x6f,
+	0x64, 0x6f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x42, 0x06, 0x5a, 0x04, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -193,21 +306,26 @@ func file_src_delivery_grpc_todo_proto_rawDescGZIP() []byte {
 	return file_src_delivery_grpc_todo_proto_rawDescData
 }
 
-var file_src_delivery_grpc_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_src_delivery_grpc_todo_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_src_delivery_grpc_todo_proto_goTypes = []interface{}{
-	(*Todo)(nil),             // 0: grpc.Todo
-	(*TodoListRequest)(nil),  // 1: grpc.TodoListRequest
-	(*TodoListResponse)(nil), // 2: grpc.TodoListResponse
+	(*Todo)(nil),               // 0: grpc.Todo
+	(*TodoListRequest)(nil),    // 1: grpc.TodoListRequest
+	(*TodoListResponse)(nil),   // 2: grpc.TodoListResponse
+	(*TodoCreateRequest)(nil),  // 3: grpc.TodoCreateRequest
+	(*TodoCreateResponse)(nil), // 4: grpc.TodoCreateResponse
 }
 var file_src_delivery_grpc_todo_proto_depIdxs = []int32{
 	0, // 0: grpc.TodoListResponse.todos:type_name -> grpc.Todo
-	1, // 1: grpc.TodoService.TodoList:input_type -> grpc.TodoListRequest
-	2, // 2: grpc.TodoService.TodoList:output_type -> grpc.TodoListResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 1: grpc.TodoCreateRequest.todo:type_name -> grpc.Todo
+	1, // 2: grpc.TodoService.TodoList:input_type -> grpc.TodoListRequest
+	3, // 3: grpc.TodoService.TodoCreate:input_type -> grpc.TodoCreateRequest
+	2, // 4: grpc.TodoService.TodoList:output_type -> grpc.TodoListResponse
+	4, // 5: grpc.TodoService.TodoCreate:output_type -> grpc.TodoCreateResponse
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_src_delivery_grpc_todo_proto_init() }
@@ -252,6 +370,30 @@ func file_src_delivery_grpc_todo_proto_init() {
 				return nil
 			}
 		}
+		file_src_delivery_grpc_todo_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TodoCreateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_src_delivery_grpc_todo_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TodoCreateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -259,7 +401,7 @@ func file_src_delivery_grpc_todo_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_src_delivery_grpc_todo_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -286,6 +428,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type TodoServiceClient interface {
 	TodoList(ctx context.Context, in *TodoListRequest, opts ...grpc.CallOption) (*TodoListResponse, error)
+	TodoCreate(ctx context.Context, in *TodoCreateRequest, opts ...grpc.CallOption) (*TodoCreateResponse, error)
 }
 
 type todoServiceClient struct {
@@ -305,9 +448,19 @@ func (c *todoServiceClient) TodoList(ctx context.Context, in *TodoListRequest, o
 	return out, nil
 }
 
+func (c *todoServiceClient) TodoCreate(ctx context.Context, in *TodoCreateRequest, opts ...grpc.CallOption) (*TodoCreateResponse, error) {
+	out := new(TodoCreateResponse)
+	err := c.cc.Invoke(ctx, "/grpc.TodoService/TodoCreate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TodoServiceServer is the server API for TodoService service.
 type TodoServiceServer interface {
 	TodoList(context.Context, *TodoListRequest) (*TodoListResponse, error)
+	TodoCreate(context.Context, *TodoCreateRequest) (*TodoCreateResponse, error)
 }
 
 // UnimplementedTodoServiceServer can be embedded to have forward compatible implementations.
@@ -316,6 +469,9 @@ type UnimplementedTodoServiceServer struct {
 
 func (*UnimplementedTodoServiceServer) TodoList(context.Context, *TodoListRequest) (*TodoListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TodoList not implemented")
+}
+func (*UnimplementedTodoServiceServer) TodoCreate(context.Context, *TodoCreateRequest) (*TodoCreateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TodoCreate not implemented")
 }
 
 func RegisterTodoServiceServer(s *grpc.Server, srv TodoServiceServer) {
@@ -340,6 +496,24 @@ func _TodoService_TodoList_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TodoService_TodoCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TodoCreateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TodoServiceServer).TodoCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/grpc.TodoService/TodoCreate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TodoServiceServer).TodoCreate(ctx, req.(*TodoCreateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _TodoService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "grpc.TodoService",
 	HandlerType: (*TodoServiceServer)(nil),
@@ -347,6 +521,10 @@ var _TodoService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TodoList",
 			Handler:    _TodoService_TodoList_Handler,
+		},
+		{
+			MethodName: "TodoCreate",
+			Handler:    _TodoService_TodoCreate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

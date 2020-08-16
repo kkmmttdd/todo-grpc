@@ -4,7 +4,9 @@ package grpc;
 option go_package = "grpc";
 
 message Todo {
-  string text = 1;
+  int32 id = 1;
+  int32 user_id = 2;
+  string text = 3;
 }
 
 message TodoListRequest {
@@ -14,6 +16,16 @@ message TodoListResponse {
   repeated Todo todos = 1;
 }
 
+message TodoCreateRequest {
+  Todo todo = 1;
+}
+
+message TodoCreateResponse {
+  bool valid = 1;
+  string message = 2;
+}
+
 service TodoService {
   rpc TodoList (TodoListRequest) returns (TodoListResponse);
+  rpc TodoCreate (TodoCreateRequest) returns (TodoCreateResponse);
 }

@@ -17,4 +17,7 @@ func (u UseCase) Search() *[]*domain.Todo {
 	return todo.Repo.Search()
 }
 
-
+func (u UseCase) Create(t *domain.Todo) (bool, error) {
+	valid, err := todo.Repo.Create(t)
+	return valid, err
+}
