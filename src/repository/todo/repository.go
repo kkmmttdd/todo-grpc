@@ -14,7 +14,7 @@ func init() {
 }
 
 type Repository interface {
-	Search() *[]*domain.Todo
+	Search(userId int16) *[]*domain.Todo
 	Create(*domain.Todo) (bool, error)
 }
 

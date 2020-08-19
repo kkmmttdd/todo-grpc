@@ -14,7 +14,7 @@ type UseCase struct {
 }
 
 func (u UseCase) Search() *[]*domain.Todo {
-	return todo.Repo.Search()
+	return todo.Repo.Search(2)
 }
 
 func (u UseCase) Create(t *domain.Todo) (bool, error) {
